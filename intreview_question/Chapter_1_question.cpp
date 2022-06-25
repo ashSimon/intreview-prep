@@ -138,10 +138,11 @@ int maximum_second(std::vector<int> &arr) {
 // 6. Print all maxima's in a array 
 void print_maxima(std::vector<int> &arr) {
     int max = arr[0];
-    for(int i = 1; i < arr.size(); i++) {
-        if (arr[i] > max) {
-            std::cout << max << std::endl;   
+    for(int i = 0; i < arr.size(); i++) {
+        if (arr[i] > max) { 
+            max = arr[i];
         }
+        if(max > arr[i + 1]) std::cout << max << std::endl;
     }
 }
 
