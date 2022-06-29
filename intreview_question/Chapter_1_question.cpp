@@ -138,19 +138,44 @@ int maximum_second(std::vector<int> &arr) {
 // 6. Print all maxima's in a array 
 void print_maxima(std::vector<int> &arr) {
     int max = arr[0];
-    for(int i = 0; i < arr.size(); i++) {
+    for(int i = 1; i < arr.size(); i++) {
         if (arr[i] > max) { 
-            max = arr[i];
+            std::cout << max << std::endl;
+            max = arr[i + 1];
         }
-        if(max > arr[i + 1]) std::cout << max << std::endl;
     }
 }
+
+// 7. print alternate elements in array
+void alternate_array(std::vector<int> &arr) {
+    int size = arr.size();
+    for(int i = 0; i < size; i+=2) {
+       std::cout << arr[i] << " ";
+    }
+}
+
+// 8. Given an array with value 0 or 1, write a program to segregate 0 on the 
+// left side and 1 on the right side.
+void segregate(std::vector<int> &arr) {
+    int size = arr.size();
+    for(int i = 0; i < size; i++) {
+        if (arr[i] == 0) {
+            arr[i] = 1;
+        } else {
+            arr[i] = 0;
+        }
+    }
+    printArray(arr);
+}
+
 
 int main() {
     // std::vector<std::vector<int>> vect = {{1,2,3,4,5},{6,7,8,9,10}};
     // std::cout << "sum of a two dimensional array is: " << sum_of_array(vect);
-    std::vector<int> arr =  {5,6,20,100,50,200,10000};
-    // std::cout << "Second largest element of array is: " << maximum_second(arr) << std::endl;
-    print_maxima(arr);
+    std::vector<int> arr =  {1,0,1,0,1};
+    // std::cout << "Alternate element of array is: " << alternate_array(arr) << std::endl;
+    // print_maxima(arr);
+    // alternate_array(arr);
+    segregate(arr);
     return 0;
 }
