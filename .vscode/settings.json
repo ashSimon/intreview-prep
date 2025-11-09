@@ -70,7 +70,13 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "valarray": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "random": "cpp",
+        "numbers": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
